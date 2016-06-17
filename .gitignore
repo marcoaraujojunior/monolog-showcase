@@ -4,3 +4,4 @@ app/config/secure/passwd
 app/config/config.yml
 *swp
 *swo
+log/**

@@ -4,7 +4,7 @@ require_once('bootstrap.php');
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\BrowserConsoleHandler;
-use Monolog\Processor\IntrospectionProcessor;
+use Monolog\Processor\GitProcessor;
 
 $logger = new Logger('Showcase');
 
@@ -47,7 +47,7 @@ $logger->addEmergency('Emergency: system is unusable.', ['emergency' => 600]);
 $logger = new Logger('Showtime');
 $logger->pushHandler(new StreamHandler(__DIR__.'/log/test.log', Logger::ERROR));
 $logger->pushHandler(new BrowserConsoleHandler(Logger::DEBUG));
-$logger->pushProcessor(new IntrospectionProcessor(Logger::ERROR));
+$logger->pushProcessor(new GitProcessor(Logger::ERROR));
 $logger->addDebug(
     'Detailed debug information.',
     ['debug' => 100, 'message' => 'It shall not show']
