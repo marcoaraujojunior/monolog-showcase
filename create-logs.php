@@ -14,7 +14,7 @@ $logger = new Logger('Showcase');
 
 $logger->pushHandler(new StreamHandler(__DIR__.'/log/test.log', Logger::DEBUG));
 $logger->pushHandler(new BrowserConsoleHandler());
-$logger->pushHandler(new SlackHandler('xoxp-51779102419-51819647030-51840190226-c3cb4ad87e', '#log'));
+$logger->pushHandler(new SlackHandler(getenv(TOKEN_SLACK), '#log'));
 
 $logger->addDebug('Detailed debug information.', ['debug' => 100]);
 
