@@ -5,11 +5,16 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\BrowserConsoleHandler;
 use Monolog\Processor\GitProcessor;
+use Monolog\Processor\MemoryUsageProcessor;
+use Monolog\Processor\MemoryPeakUsageProcessor;
+use Monolog\Processor\ProcessIdProcessor;
+use Monolog\Handler\SlackHandler;
 
 $logger = new Logger('Showcase');
 
 $logger->pushHandler(new StreamHandler(__DIR__.'/log/test.log', Logger::DEBUG));
 $logger->pushHandler(new BrowserConsoleHandler());
+$logger->pushHandler(new SlackHandler('xoxp-51779102419-51819647030-51840190226-c3cb4ad87e', '#log'));
 
 $logger->addDebug('Detailed debug information.', ['debug' => 100]);
 
@@ -48,6 +53,9 @@ $logger = new Logger('Showtime');
 $logger->pushHandler(new StreamHandler(__DIR__.'/log/test.log', Logger::ERROR));
 $logger->pushHandler(new BrowserConsoleHandler(Logger::DEBUG));
 $logger->pushProcessor(new GitProcessor(Logger::ERROR));
+$logger->pushProcessor(new MemoryUsageProcessor(Logger::ERROR));
+$logger->pushProcessor(new MemoryPeakUsageProcessor(Logger::ERROR));
+$logger->pushProcessor(new ProcessIdProcessor(Logger::ERROR));
 $logger->addDebug(
     'Detailed debug information.',
     ['debug' => 100, 'message' => 'It shall not show']
@@ -56,3 +64,4 @@ $logger->addError(
     'Error found, please follow monitoring',
     ['message' => 'You could show any additional information here']
 );
+
