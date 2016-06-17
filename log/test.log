@@ -1,0 +1,9 @@
+[2016-06-17 03:10:53] Showcase.DEBUG: Detailed debug information. {"debug":100} []
+[2016-06-17 03:10:53] Showcase.INFO: Interesting events. Examples: User logs in, SQL logs. {"info":200} []
+[2016-06-17 03:10:53] Showcase.NOTICE: Normal but significant events. {"notice":250} []
+[2016-06-17 03:10:53] Showcase.WARNING: Exceptional occurrences that are not errors. Examples: Use of deprecated APIs, poor use of an API, undesirable things that are not necessarily wrong. {"warning":300} []
+[2016-06-17 03:10:53] Showcase.ERROR: Runtime errors that do not require immediate action but should typically be logged and monitored. {"error":400} []
+[2016-06-17 03:10:53] Showcase.CRITICAL: Critical conditions. Example: Application component unavailable, unexpected exception. {"critical":500} []
+[2016-06-17 03:10:53] Showcase.ALERT: Action must be taken immediately. Example: Entire website down, database unavailable, etc. This should trigger the SMS alerts and wake you up. {"alert":550} []
+[2016-06-17 03:10:53] Showcase.EMERGENCY: Emergency: system is unusable. {"emergency":600} []
+[2016-06-17 03:10:53] Showtime.ERROR: Error found, please follow monitoring {"message":"You could show any additional information here"} {"file":"/home/marco/Projetos/monolog-viewer/create-logs.php","line":58,"class":null,"function":null}

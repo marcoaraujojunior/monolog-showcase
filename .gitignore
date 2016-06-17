@@ -1,0 +1,6 @@
+vendor/*
+composer.phar
+app/config/secure/passwd
+app/config/config.yml
+*swp
+*swo
